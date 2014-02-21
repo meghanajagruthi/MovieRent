@@ -1,0 +1,27 @@
+<%= form_for(@movie) do |f| %>
+<p>
+    <%= f.label :movie_name%><br>
+    <%= f.text_field :movie_name %>
+  </p>
+ 
+  <p>
+    <%= f.label :Language %><br>
+    <%= f.text_field :Language %>
+  </p>
+ <p>
+    <%= f.label :release_date%><br>
+    <%=f.select :release_date,(1940)..(Time.zone.now.year)%>
+    
+  </p>
+ 
+  <p>
+    <%= f.label :Type_of_movie%><br>
+    
+    <%= f.text_area :type_of_movie%>
+  </p>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+  <%= link_to 'back', movies_path %>
+<% end %>

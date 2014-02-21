@@ -1,0 +1,30 @@
+
+<%= link_to "Home", controller: "welcome" %>
+
+<h1>...................Customer  Data.............</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Mobile Number</th>
+    <th>Email </th>
+    <th>Address</th>
+  </tr>
+ 
+  <% @customer.each do |customer| %>
+    <tr>
+      <td><%= customer.Name %></td>
+      <td><%= customer.mobile_number %></td>
+      <td><%= customer.email %></td>
+      <td><%= customer.address %></td>
+      <td><%= link_to 'Edit', edit_customer_path(customer) %></td>
+      <td><%= link_to 'Delete_customer', customer_path(customer),
+                    method: :delete, data: { confirm: 'Are you sure you want to delete this customer?' } %></td>
+    </tr>
+    
+  <% end %>
+  
+</table>
+
+<%= link_to 'Add customer', new_customer_path %>
+

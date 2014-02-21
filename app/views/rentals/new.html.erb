@@ -1,0 +1,16 @@
+<%= form_for :rental, url: rentals_path do |f| %>
+   
+  <p>
+    <%= f.label :Phone_number %><br>
+    <%= f.text_field :phone_num %>
+  </p>
+ 
+  <p>
+    <%= f.label :moviename%><br>
+    <%= f.text_field :moviename %>
+  </p>
+ 
+    <%= f.submit %>
+  </p>
+ <%= link_to 'back', rentals_path %>
+<% end %>
